@@ -24,7 +24,7 @@ export const fragmentShader = /*glsl*/ `
     #define mainImage main
     #define iTime u_time
 
-    #define power 1.0
+    #define power 10.0
     #define zoomOut 5.0
     #define rot 1.0
     #define iter 8.0
@@ -34,7 +34,7 @@ export const fragmentShader = /*glsl*/ `
     #define distortPower 1.0
     #define Speed 0.01
     #define WaveSpeed 0.1
-    #define Brightness 0.05
+    #define Brightness 0.08
 
     void mainImage( void )
     {

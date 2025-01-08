@@ -1,5 +1,4 @@
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
 import useDimension from "../../hooks/useDimension";
 import Wave from "../../components/Wave/Wave";
 import "./Envirenement.scss";
@@ -29,9 +28,9 @@ function Envirenement() {
                 className="scene"
             >
 
-                <Suspense fallback={null}>
-                    <Wave />
-                </Suspense>
+
+                <Wave />
+
             </Canvas>
 
             <div className="thanks">
