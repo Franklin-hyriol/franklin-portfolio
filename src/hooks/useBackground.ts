@@ -6,14 +6,13 @@ import { useTexture } from "@react-three/drei";
 import useMouse from "./useMouse";
 
 
-// const lerp = (start: number, end: number, amt: number) => start * (1 - amt) + end * amt;
-// const speed = 0.015;
-
-
-
+useTexture.preload("/images/paper.jpg")
+useTexture.preload("/images/franklin-hyriol.png")
 
 
 export function useBackground(u_time: number) {
+
+
     const device = useDimension();
     const mouse = useMouse();
 
@@ -50,9 +49,8 @@ export function useBackground(u_time: number) {
     group.add(plane);
 
 
-
     const geometry1 = new PlaneGeometry(device.width, device.height);
-    const texture1 = useTexture("/images/paper.png");
+    const texture1 = useTexture("/images/paper.jpg");
     const material1 = new MeshBasicMaterial({
         map: texture1,
         transparent: true, // Active la transparence
@@ -86,26 +84,6 @@ export function useBackground(u_time: number) {
     const image2 = new Mesh(geometry2, material2);
     group.add(image2);
 
-
-    // Normaliser les coordonnées de la souris dans l'espace écran (-1 à 1)
-    // const normalizedX = (mouse.x / device.width) * 2 - 1; // -1 à 1 horizontal
-    // const normalizedY = -((mouse.y / device.height) * 2 - 1); // -1 à 1 vertical (inversé)
-
-    // // Convertir en coordonnées dans l'espace caméra
-    // const cameraWidth = (camera.right - camera.left) / 2;
-    // const cameraHeight = (camera.top - camera.bottom) / 2;
-
-    // const worldX = normalizedX * cameraWidth;
-    // const worldY = normalizedY * cameraHeight;
-
-
-    // if (Math.abs(worldX) > 0.1 || Math.abs(worldY) > 0.1) {
-    //     image1.position.x += lerp((worldX * speed), 0, 0.1);
-    //     image1.position.y += lerp((worldY * speed), 0, 0.1);
-    // } else {
-    //     image1.position.x = 0;
-    //     image1.position.y = 0;
-    // }
 
     scene.add(group);
     return { scene, camera, uniforms };

@@ -10,6 +10,7 @@ const Headers = lazy(() => import("./components/Headers/Headers"));
 
 function App() {
   const [componentsReady, setComponentsReady] = useState(false);
+  const [preloader, setPreloader] = useState(true);
 
   useEffect(() => {
     const loadComponents = async () => {
@@ -19,6 +20,10 @@ function App() {
       ]);
 
       setComponentsReady(true);
+
+      setTimeout(() => {
+        setPreloader(false);
+      }, 1500);
 
     };
 
@@ -31,8 +36,11 @@ function App() {
 
   return (
     <>
-      <Headers />
-      <Envirenement />
+      {preloader && <Loader fade={true} />}
+      <div className="fadeOnLoad">
+        <Headers />
+        <Envirenement />
+      </div>
     </>
   );
 }

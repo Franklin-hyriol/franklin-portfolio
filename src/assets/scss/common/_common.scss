@@ -6,11 +6,32 @@
 html,
 body {
 	overflow-x: hidden;
-	background-color: var(--white);
+	background-color: var(--black);
 	font-family: var(--font-primary);
 	min-width: toRem(320px);
 	width: 100dvw;
 	height: 100dvh;
+
+	canvas {
+		background: var(--black);
+	}
+}
+
+
+.fadeOnLoad {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	animation: fadeOnLoad 1s ease-in-out forwards;
+}
+
+@keyframes fadeOnLoad {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 body.body-overlay {

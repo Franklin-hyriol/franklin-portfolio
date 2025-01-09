@@ -1,11 +1,15 @@
 import "./Loader.scss";
 
-function Loader() {
+type LoaderProps = {
+    fade?: boolean;
+}
+
+function Loader({ fade }: LoaderProps) {
     return (
-        <div className="loader-container">
+        <div className={`loader-container ${fade ? "fade" : ""}`}>
             <div className="loader"></div>
         </div>
     )
 }
 
-export default Loader
+export default Loader;

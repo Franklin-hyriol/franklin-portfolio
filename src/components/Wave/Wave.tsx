@@ -8,6 +8,7 @@ import { useBackground } from "../../hooks/useBackground";
 import { vertexShader } from "../../shaders/vertex";
 import { fragmentShader } from "../../shaders/fragmentRipple";
 
+useTexture.preload("/wave.png");
 
 function Wave() {
     const texture = useTexture("/wave.png");
