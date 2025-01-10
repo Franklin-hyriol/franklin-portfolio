@@ -13,6 +13,8 @@ function App() {
   const [preloader, setPreloader] = useState(true);
 
   useEffect(() => {
+
+
     const loadComponents = async () => {
       await Promise.all([
         import("./section/Envirenement/Envirenement"),
@@ -28,7 +30,9 @@ function App() {
     };
 
     loadComponents();
+
   }, []);
+
 
   if (!componentsReady) {
     return <Loader />;
@@ -40,6 +44,7 @@ function App() {
       <div className="fadeOnLoad">
         <Headers />
         <Envirenement />
+        {/* <div style={{ backgroundColor: 'red', height: '100vh' }}></div> */}
       </div>
     </>
   );

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 // import { MdMenu, MdClose } from "react-icons/md";
 import "./Headers.scss";
+import Project from "../Project/Project";
+import ProjectScene from "../ProjectScene/ProjectScene";
 
 function Headers() {
 
     const [menuOpen, setMenuOpen] = useState(false);
-
+    const [activeProject, setActiveProject] = useState<number | null>(null);
 
     useEffect(() => {
         if (menuOpen) {
@@ -14,6 +16,7 @@ function Headers() {
             document.body.style.overflow = "auto";
         }
     }, [menuOpen]);
+
 
     return (
         <>
@@ -47,13 +50,9 @@ function Headers() {
             </div>
 
             <div>
-                <div className={`menu ${menuOpen ? "on" : ""}`}>
-                    <ul>
-                        <li>HOME</li>
-                        <li>ABOUT</li>
-                        <li>PROJECTS</li>
-                        <li>CONTACT</li>
-                    </ul>
+                <div className={`menu-mobile ${menuOpen ? "on" : ""}`}>
+                    <Project setActiveProject={setActiveProject} />
+                    <ProjectScene activeProject={activeProject} />
                 </div>
             </div>
 

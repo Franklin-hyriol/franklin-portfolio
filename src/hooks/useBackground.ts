@@ -54,7 +54,7 @@ export function useBackground(u_time: number) {
     const material1 = new MeshBasicMaterial({
         map: texture1,
         transparent: true, // Active la transparence
-        opacity: 0.17
+        opacity: 0.15
     });
     const image1 = new Mesh(geometry1, material1);
     group.add(image1);

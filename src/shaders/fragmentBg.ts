@@ -34,7 +34,7 @@ export const fragmentShader = /*glsl*/ `
     #define distortPower 1.0
     #define Speed 0.01
     #define WaveSpeed 0.1
-    #define Brightness 0.08
+    #define Brightness 0.02
 
     void mainImage( void )
     {
@@ -61,7 +61,7 @@ export const fragmentShader = /*glsl*/ `
         finalCol = vec3(col*col);
 
 
-        vec3 Color = vec3(0., mouse.x,  mouse.y) * Brightness;
+        vec3 Color = vec3(0., mouse.y,  mouse.x) * mouse.x * Brightness;
 
         // Output to screen
         fragColor = vec4(finalCol.rgb * Color, 1) * power;
