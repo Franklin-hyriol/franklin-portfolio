@@ -8,9 +8,6 @@ type ProjectSceneProps = {
 }
 
 function ProjectScene({ activeProject }: ProjectSceneProps) {
-
-    console.log(activeProject);
-
     return (
         <div className="projectScene-wrapper">
             <Canvas>

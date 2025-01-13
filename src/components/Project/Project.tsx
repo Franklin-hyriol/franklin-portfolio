@@ -1,4 +1,6 @@
+import { slideLink } from "../Headers/anim";
 import "./Project.scss";
+import { motion } from "framer-motion";
 
 const fakedata = [
     "Project Alpha",
@@ -19,7 +21,7 @@ function Project({ setActiveProject }: ProjectProps) {
             <ul className="project-liste" onMouseLeave={() => setActiveProject(null)}>
 
                 {fakedata.map((item, index) => (
-                    <li className="project-item" onMouseOver={() => setActiveProject(index)} key={index}><span>{item}</span></li>
+                    <motion.li variants={slideLink} initial='initial' animate='enter' exit='exit' className="project-item" onMouseOver={() => setActiveProject(index)} key={index}><span>{item}</span></motion.li>
                 ))}
 
             </ul>

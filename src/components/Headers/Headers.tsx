@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import "./Headers.scss";
 import Project from "../Project/Project";
 import ProjectScene from "../ProjectScene/ProjectScene";
+import { AnimatePresence, motion } from "framer-motion";
+import { menuSlide } from "./anim";
 
 function Headers() {
 
@@ -49,12 +51,15 @@ function Headers() {
                 </div>
             </div>
 
-            <div>
-                <div className={`menu-mobile ${menuOpen ? "on" : ""}`}>
-                    <Project setActiveProject={setActiveProject} />
-                    <ProjectScene activeProject={activeProject} />
-                </div>
-            </div>
+            <AnimatePresence mode="wait">
+                {menuOpen &&
+                    <motion.div variants={menuSlide} animate="enter" exit="exit" initial="initial" className="menu-mobile">
+                        <Project setActiveProject={setActiveProject} />
+                        <ProjectScene activeProject={activeProject} />
+                    </motion.div>
+                }
+            </AnimatePresence>
+
 
             <div className="copiright">
                 © Franklin Hyriol Inc

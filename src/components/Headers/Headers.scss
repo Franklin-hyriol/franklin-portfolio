@@ -110,20 +110,13 @@ nav.header {
 .menu-mobile {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
+    // left: 0;
+    width: 100dvw;
     min-height: 100dvh;
     background: var(--black);
     z-index: 200;
-    opacity: 0;
-    visibility: hidden;
     transition: all 0.3s;
     overflow-y: auto;
-
-    &.on {
-        opacity: 1;
-        visibility: visible;
-    }
 }
 
 .copiright {
