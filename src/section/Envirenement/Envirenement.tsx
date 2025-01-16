@@ -28,8 +28,7 @@ function Envirenement() {
                 className="scene"
             >
 
-
-                <Wave />
+                {/* <Wave /> */}
 
             </Canvas>
 

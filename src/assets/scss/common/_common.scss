@@ -5,11 +5,10 @@
 
 html,
 body {
-	overflow-x: hidden;
 	background-color: var(--black);
 	font-family: var(--font-primary);
 	min-width: toRem(320px);
-	width: 100dvw;
+	width: 100%;
 
 	canvas {
 		background: var(--black);
@@ -117,14 +116,6 @@ picture {
 
 // }
 
-p,
-.paragraph {
-	font-size: toRem(16px);
-	line-height: toRem(20.8px);
-	text-align: justify;
-	color: var(--color-text);
-	margin-bottom: toRem(24px);
-}
 
 h1,
 h2,
@@ -133,7 +124,7 @@ h4,
 h5,
 h6 {
 	font-weight: 700;
-	color: var(--color-primary);
+	color: var(--white);
 }
 
 
@@ -150,12 +141,12 @@ h2,
 	margin-bottom: toRem(20.8px);
 }
 
-h3,
-.title-h3 {
-	font-size: toRem(20px);
-	line-height: toRem(28px);
-	margin-bottom: toRem(16px);
-}
+// h3,
+// .title-h3 {
+// 	font-size: toRem(20px);
+// 	line-height: toRem(28px);
+// 	margin-bottom: toRem(16px);
+// }
 
 // h4,
 // .h4 {

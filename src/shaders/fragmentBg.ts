@@ -61,10 +61,9 @@ export const fragmentShader = /*glsl*/ `
         finalCol = vec3(col*col);
 
 
-        vec3 Color = vec3(0., mouse.y,  mouse.x) * (mouse.x * 0.005) * Brightness;
+        vec3 Color = vec3(0.2, mouse.y,  mouse.x) * (mouse.x * 0.005) * Brightness;
 
         // Output to screen
         fragColor = vec4(finalCol.rgb * Color, 1) * power;
     }
-    
 `;
