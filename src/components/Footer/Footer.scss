@@ -69,7 +69,7 @@
                 grid-template-columns: 1fr 1fr;
                 position: relative;
                 margin-bottom: 30px;
-                height: 250px;
+                height: 256px;
                 overflow: hidden;
 
 
@@ -129,8 +129,8 @@
         }
 
         .button:active {
-            background-image: linear-gradient(#313ed7, #3470fa);
-            border-color: #313ed7;
+            background-image: linear-gradient(#00A650, #46BF54);
+            border-color: #00A650;
         }
 
         .icon {

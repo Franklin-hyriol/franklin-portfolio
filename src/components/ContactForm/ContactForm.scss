@@ -1,0 +1,115 @@
+@use "../../assets//scss//common/mixins" as *;
+
+.contact {
+    padding: 40px 0;
+
+    .contact_title {
+        font-size: clamp(1.25rem, 0rem + 6.25vi, 10rem);
+    }
+
+
+    .contact_form {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+
+    .form__group {
+        position: relative;
+        padding: 20px 0 0;
+    }
+
+    .form__field {
+        font-family: inherit;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid #d2d2d2;
+        outline: 0;
+        font-size: 25px;
+        color: #ffffff;
+        padding: 7px 0;
+        background: transparent;
+        transition: border-color 0.2s;
+
+        @include max(992px) {
+            font-size: 20px;
+        }
+    }
+
+    .form__field::placeholder {
+        color: transparent;
+    }
+
+    .form__field:placeholder-shown~.form__label {
+        font-size: 16px;
+        cursor: text;
+        top: 35px;
+    }
+
+    label,
+    .form__field:focus~.form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 12px;
+        color: #9b9b9b;
+    }
+
+    .form__field:focus~.form__label {
+        color: var(--white);
+    }
+
+    .form__field:focus {
+        padding-bottom: 6px;
+        border-bottom: 2px solid var(--white);
+    }
+
+    textarea.form__field {
+        resize: none;
+        height: 240px;
+        width: 100%;
+        overflow-y: auto;
+        margin-bottom: 40px;
+    }
+
+    .contact_button {
+        padding: 0.1em 0.25em;
+        height: 4.2em;
+        background-color: #212121;
+        border: 0.08em solid #fff;
+        border-radius: 0.3em;
+        font-size: 12px;
+        cursor: pointer;
+        width: 200px;
+        align-self: flex-end;
+
+        span {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 0.4em;
+            width: 8.25em;
+            height: 2.5em;
+            background-color: #212121;
+            border-radius: 0.2em;
+            font-size: 1.5em;
+            color: #fff;
+            border: 0.08em solid #fff;
+            box-shadow: 0 0.4em 0.1em 0.019em #fff;
+            width: 100%;
+        }
+
+        span:hover {
+            transition: all 0.2s;
+            transform: translate(0, 0.4em);
+            box-shadow: 0 0 0 0 #fff;
+        }
+
+        span:not(hover) {
+            transition: all 0.3s;
+        }
+    }
+}

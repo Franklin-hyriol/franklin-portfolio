@@ -1,6 +1,7 @@
 @use "./mixins" as *;
 @use "./breakpoint" as *;
 @use "./toRem" as *;
+@use "./variables" as *;
 
 
 html,
@@ -98,23 +99,24 @@ picture {
 
 
 
-// .container {
-// 	@include centerMargin();
-// 	padding-left: toRem(40px);
-// 	padding-right: toRem(40px);
-// 	max-width: $container;
+.container {
+	@include centerMargin();
+	padding-left: toRem(40px);
+	padding-right: toRem(40px);
+	max-width: $container;
+	margin-top: 70px;
 
-// 	@include minMax($tablet-portrait-min, $tablet-portrait-max) {
-// 		padding-left: toRem(20px);
-// 		padding-right: toRem(20px);
-// 	}
+	@include minMax($tablet-portrait-min, $tablet-portrait-max) {
+		padding-left: toRem(20px);
+		padding-right: toRem(20px);
+	}
 
-// 	@include max($mobile-max) {
-// 		padding-left: toRem(20px);
-// 		padding-right: toRem(20px);
-// 	}
+	@include max($mobile-max) {
+		padding-left: toRem(20px);
+		padding-right: toRem(20px);
+	}
 
-// }
+}
 
 
 h1,
@@ -130,15 +132,28 @@ h6 {
 
 h1,
 .title-h1 {
-	font-size: toRem(24px);
-	line-height: toRem(33.6px);
-	margin-bottom: toRem(24px);
+	font-size: clamp(3.25rem, 0rem + 6.25vi, 10rem);
+	line-height: 1;
+	margin-bottom: toRem(40px);
+
+	@include max(992px) {
+		margin-bottom: toRem(20px);
+	}
 }
 
 h2,
 .title-h2 {
 	font-size: toRem(16px);
 	margin-bottom: toRem(20.8px);
+}
+
+.p-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
 }
 
 // h3,

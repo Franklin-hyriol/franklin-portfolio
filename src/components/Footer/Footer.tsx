@@ -30,7 +30,7 @@ function Footer({ setIsCanvasHovered }: FooterProps) {
                                         <div className="about-text">
                                             <h2 className="about-text-title">Bonjour 😊!</h2>
                                             <p className="about-text-p">
-                                                Ce portfolio vous donne un aperçu de mes compétences. Inspiré de designs que j’admire, ce projet reflète un travail soigné. Si ce style vous plaît, imaginez ce que je pourrais créer pour vous. N’hésitez pas à me contacter, j’ai hâte d’échanger avec vous !
+                                                Ce portfolio vous donne un aperçu de mes compétences. Inspiré de designs que j’admire, C'est vrai que j'ai un peu triché, mais ce n'est pas aussi facile que ça en a l'air. Si ce style vous plaît, imaginez ce que je pourrais créer pour vous. N’hésitez pas à me contacter, j’ai hâte d’échanger avec vous !
                                             </p>
                                         </div>
                                     </div>
@@ -40,7 +40,7 @@ function Footer({ setIsCanvasHovered }: FooterProps) {
                                     <a className="button">
                                         <div className="icon">
                                             <span className="text-icon hide">Icon</span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" x2="12" y1="15" y2="3" /></svg>
                                         </div>
                                         <span className="title"> Telecharger mon CV </span>
                                         <div className="padding-left hide">

@@ -21,6 +21,7 @@ nav.header {
     .logo {
         cursor: pointer;
         position: relative;
+        display: block;
 
         .f,
         .h {
@@ -56,11 +57,15 @@ nav.header {
         font-size: 11.5px;
         font-weight: 400;
         letter-spacing: 2px;
+        align-items: center;
 
-        li {
+        li a,
+        li:not(:first-child) {
             padding: 8px 0;
             cursor: pointer;
             mix-blend-mode: difference;
+            color: var(--white);
+
 
             &:hover {
                 border-bottom: 1px solid var(--white);
@@ -72,52 +77,6 @@ nav.header {
 
 }
 
-.menuToggle {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    position: fixed;
-    right: 25px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 250;
-
-    .menuButton {
-        color: var(--white);
-        cursor: pointer;
-        width: 35px;
-        height: 30px;
-
-        div {
-            width: 100%;
-            height: 5px;
-            background: white;
-            margin: 6px auto;
-            transition: all 0.3s;
-            backface-visibility: hidden;
-        }
-
-        &.on .one {
-            transform: rotate(45deg) translate(7px, 2px);
-        }
-
-        &.on .two {
-            transform: rotate(-45deg) translate(6px, -2px);
-        }
-    }
-}
-
-.menu-mobile {
-    position: fixed;
-    top: 0;
-    // left: 0;
-    width: 100dvw;
-    min-height: 100dvh;
-    background: var(--black);
-    z-index: 200;
-    transition: all 0.3s;
-    overflow-y: auto;
-}
 
 .copiright {
     position: fixed;

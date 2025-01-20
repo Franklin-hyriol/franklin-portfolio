@@ -1,13 +1,13 @@
-import { slideLink } from "../Headers/anim";
+import { slideLink } from "../../pages/Home/anim";
 import "./Project.scss";
 import { motion } from "framer-motion";
 
 const fakedata = [
-    "Project Alpha",
-    "Project Beta",
-    "Project Gamma",
-    "Project Delta",
-    "Project Epsilon",
+    "Richard Gaston",
+    "KangHee Kim",
+    "Inka and Niclas",
+    "Arch McLeish",
+    "Nadir Bucan",
 ]
 
 type ProjectProps = {
@@ -25,7 +25,6 @@ function Project({ setActiveProject }: ProjectProps) {
                 ))}
 
             </ul>
-
 
         </div>
     )
