@@ -12,7 +12,57 @@
         display: flex;
         flex-direction: column;
         gap: 35px;
+        position: relative;
+
+
+        &.loadingForm {
+            background: #ffffff24;
+            animation: backgroundLoading 2s linear infinite;
+            pointer-events: none;
+            cursor: not-allowed;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-top: -30px;
+                margin-left: -30px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+                border: 5px solid grey;
+                border-top-color: rgb(255, 255, 255);
+                animation: loading 2s linear infinite;
+            }
+        }
+
     }
+
+    @keyframes backgroundLoading {
+        0% {
+            background: #ffffff00;
+        }
+
+        50% {
+            background: #ffffff24;
+        }
+
+        100% {
+            background: #ffffff00;
+        }
+    }
+
+    @keyframes loading {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
 
 
     .form__group {
@@ -31,11 +81,24 @@
         padding: 7px 0;
         background: transparent;
         transition: border-color 0.2s;
+        margin-bottom: 5px;
 
         @include max(992px) {
             font-size: 20px;
         }
     }
+
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #ffffff;
+        transition: background-color 5000s ease-in-out 0s;
+        box-shadow: inset 0 0 20px 20px #23232329;
+    }
+
 
     .form__field::placeholder {
         color: transparent;
@@ -71,7 +134,6 @@
         height: 240px;
         width: 100%;
         overflow-y: auto;
-        margin-bottom: 40px;
     }
 
     .contact_button {
@@ -111,5 +173,12 @@
         span:not(hover) {
             transition: all 0.3s;
         }
+    }
+
+    .error-msg {
+        color: #ff2c2c;
+        height: 16px;
+        display: block;
+        width: 100%;
     }
 }
